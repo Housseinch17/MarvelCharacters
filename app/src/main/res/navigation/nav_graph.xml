@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/marvelCharactersFragment">
+    <fragment
+        android:id="@+id/marvelCharactersFragment"
+        android:name="com.marvel.ui.fragments.MarvelCharactersFragment"
+        android:label="fragment_marvel_characters"
+        tools:layout="@layout/fragment_marvel_characters" >
+        <action
+            android:id="@+id/action_marvelCharactersFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.marvel.ui.fragments.CharacterDetailsFragment"
+        android:label="fragment_character_details"
+        tools:layout="@layout/fragment_character_details" >
+        <action
+            android:id="@+id/action_characterDetailsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.marvel.ui.fragments.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_inspectItemsFragment"
+            app:destination="@id/inspectItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inspectItemsFragment"
+        android:name="com.marvel.ui.fragments.InspectItemsFragment"
+        android:label="fragment_inspect_items"
+        tools:layout="@layout/fragment_inspect_items" />
+</navigation>
